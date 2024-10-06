@@ -5,9 +5,9 @@ import {
   SafeAreaView,
   FlatList,
 } from 'react-native';
+import { useEffect, useState } from 'react';
 
 import { apiGet } from '../services/api';
-import { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 type Movie = {
@@ -33,13 +33,13 @@ const ItemMovie = ({id, title, navigation}: ItemProps) => (
 );
 
 export default function ListMoviesScreen(): React.JSX.Element {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
   const navigation = useNavigation();
 
   useEffect(() => {
     setIsLoading(true);
-    apiGet('list/1', {page: 1})
+    apiGet('4/list/1', {page: 1})
       .then(data => setMovies(data.results))
       .catch(error => console.log(error))
       .finally(() => setIsLoading(false));
@@ -47,16 +47,14 @@ export default function ListMoviesScreen(): React.JSX.Element {
 
   return (
     <SafeAreaView>
-      <View>
-        {isLoading ? (
-          <Text>Loading...</Text>
-        ) : (
-          <FlatList
-            data={movies}
-            renderItem={({item}) => <ItemMovie id={item.id} title={item.title} navigation={navigation} />}
-          />
-        )}
-      </View>
+      {isLoading ? (
+        <Text>Loading...</Text>
+      ) : (
+        <FlatList
+          data={movies}
+          renderItem={({item}) => <ItemMovie id={item.id} title={item.title} navigation={navigation} />}
+        />
+      )}
     </SafeAreaView>
   );
 }

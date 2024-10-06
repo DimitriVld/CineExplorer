@@ -5,7 +5,7 @@ export const apiGet = (uri, params, responseType) => {
     const headers = {};
     headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOWI2ZDY2N2U2MzdkODUyOGFmNDIxM2RiZGViNTZiZCIsIm5iZiI6MTcyODE2NDIzMy41MjU2NDIsInN1YiI6IjY3MDEyY2QwYzlhMTBkNDZlYTdkMDliMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qGq9XhoUmzhGEm9LuBzq7ghiIWaRmBAUgmFe-oxr-RM';
 
-    axios.get(`https://api.themoviedb.org/4/${uri}?api_key=09b6d667e637d8528af4213dbdeb56bd`, {
+    axios.get(`https://api.themoviedb.org/${uri}?api_key=09b6d667e637d8528af4213dbdeb56bd`, {
       params,
       withCredentials: true,
       responseType: responseType,
