@@ -1,0 +1,16 @@
+current directory: /Users/dimitri/Desktop/workspace/CineExplorer/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+/Users/dimitri/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dimitri/Desktop/workspace/CineExplorer/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241005-11885-qwb5sb sitelibdir\=./.gem.20241005-11885-qwb5sb clean
+
+current directory: /Users/dimitri/Desktop/workspace/CineExplorer/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241005-11885-qwb5sb sitelibdir\=./.gem.20241005-11885-qwb5sb
+make: Nothing to be done for `all'.
+
+current directory: /Users/dimitri/Desktop/workspace/CineExplorer/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241005-11885-qwb5sb sitelibdir\=./.gem.20241005-11885-qwb5sb install
+
+current directory: /Users/dimitri/Desktop/workspace/CineExplorer/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241005-11885-qwb5sb sitelibdir\=./.gem.20241005-11885-qwb5sb clean
