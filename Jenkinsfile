@@ -49,8 +49,9 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: '**/build/**', allowEmptyArchive: true
-            junit '**/test-results.xml'
+            node {
+                archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
+            }
         }
     }
 }
