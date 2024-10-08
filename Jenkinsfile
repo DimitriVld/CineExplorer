@@ -1,7 +1,20 @@
 pipeline {
     agent any
 
-    stages {        
+    environment {
+        PATH = "/opt/homebrew/bin:${env.PATH}"
+    }
+
+    stages {
+        stage('Vérifier le Shell') {
+            steps {
+                echo 'Vérification de la disponibilité des shells...'
+                sh 'which sh || echo "sh non trouvé"'
+                sh 'which bash || echo "bash non trouvé"'
+                sh 'echo "PATH actuel : $PATH"'
+            }
+        }
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -10,14 +23,14 @@ pipeline {
 
         stage('Installer les dépendances') {
             steps {
-                sh '/bin/bash -c "npm install"'
-                sh '/bin/bash -c "cd ios && pod install && cd .."'
+                sh 'npm install'
+                sh 'cd ios && pod install && cd ..'
             }
         }
 
         stage('Lancer les tests') {
             steps {
-                sh '/bin/bash -c "npm test"'
+                sh 'npm test'
             }
         }
 
