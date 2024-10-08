@@ -49,8 +49,10 @@ pipeline {
 
     post {
         always {
-            node {
-                archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
+            script {
+                if (currentBuild.result != 'FAILURE') {
+                    archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
+                }
             }
         }
     }
