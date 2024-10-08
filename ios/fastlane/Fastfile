@@ -16,8 +16,14 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Generate new localized screenshots"
-  lane :screenshots do
-    capture_screenshots(workspace: "CineExplorer.xcworkspace", scheme: "CineExplorer")
+  desc "Build l'application iOS"
+  lane :build do
+    build_app(scheme: "VotreScheme")
+  end
+
+  desc "Tester l'application iOS"
+  lane :test do
+    run_tests(scheme: "VotreScheme")
   end
 end
+
