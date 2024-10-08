@@ -10,14 +10,14 @@ pipeline {
 
         stage('Installer les dépendances') {
             steps {
-                sh 'npm install'
-                sh 'cd ios && pod install && cd ..'
+                sh '/bin/bash -c "npm install"'
+                sh '/bin/bash -c "cd ios && pod install && cd .."'
             }
         }
 
         stage('Lancer les tests') {
             steps {
-                sh 'npm test'
+                sh '/bin/bash -c "npm test"'
             }
         }
 
